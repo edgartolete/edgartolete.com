@@ -31,21 +31,20 @@ export async function POST(req: Request) {
   const recipientEmail = process.env.RECIPIENT_EMAIL || [];
 
   const receiverPayload: CreateEmailOptions = {
-    from: `Tolete Web Development Services<${providerEmail}>`,
+    from: `Edgar Tolete Website<${providerEmail}>`,
     to: recipientEmail,
     subject: "New message from your website",
-    html: `<p>email: ${senderEmail}</p>
+    html: `<p>Email: ${senderEmail}</p>
           <p>First Name: ${firstName}</p>
           <p>Last Name: ${lastName}</p>
           <p>Message: ${message}</p>`,
   };
 
   const senderPayload: CreateEmailOptions = {
-    from: `Tolete Web Development Services<${providerEmail}>`,
+    from: `Edgar Tolete Website<${providerEmail}>`,
     to: [senderEmail],
-    subject:
-      "Here is a copy of your message to Tolete Web Development Services",
-    html: `<p>email: ${senderEmail}</p>
+    subject: "Here is a copy of your message to EdgarTolete.com",
+    html: `<p>Email: ${senderEmail}</p>
           <p>First Name: ${firstName}</p>
           <p>Last Name: ${lastName}</p>
           <p>Message: ${message}</p>`,
