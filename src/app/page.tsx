@@ -4,10 +4,10 @@ import { Testimonials } from "./components/testimonials";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Header />
       <About />
       <Testimonials />
-    </>
+    </main>
   );
 }
