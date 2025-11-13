@@ -7,7 +7,10 @@ export type ResendPayload = {
   message: string;
 };
 
-const allowedOrigins = ["https://tolete.dev", "https://www.tolete.dev"];
+const allowedOrigins = [
+  "https://edgartolete.com",
+  "https://www.edgartolete.com",
+];
 
 export async function POST(req: Request) {
   const data = await req.json();

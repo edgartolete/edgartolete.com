@@ -177,7 +177,7 @@ export default function FormModal() {
 
             <div
               className="g-recaptcha mt-4"
-              data-sitekey="6LexfjIrAAAAAKK85ZYw6ICKWirGefV-97h4txEQ"
+              data-sitekey="6LfrYkUcAAAAABgteMKxsLpqB-J50G9UyvVZ1pLW"
               data-callback="onSubmit"
               data-expired-callback="onExpired"
               data-error-callback="onError"
