@@ -106,7 +106,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       }}
       className={cn(
         "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex ",
-          "bg-white/80 dark:bg-neutral-950/80",
+        "bg-white/80 dark:bg-neutral-950/80",
         className,
       )}
     >
@@ -130,7 +130,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         <Link
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+          className="relative mr-0 px-4 py-2 text-neutral-600 dark:text-neutral-300"
           key={`link-${idx}`}
           href={item.link}
         >
@@ -140,7 +140,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
               className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
             />
           )}
-          <span className="relative z-20">{item.name}</span>
+          <span className="relative z-20 bold">{item.name}</span>
         </Link>
       ))}
     </motion.div>
@@ -248,14 +248,20 @@ export const NavbarLogo = () => {
       href="#"
     >
       {!isDark ? (
-        <Image src="/brand-lg.png" priority={true} alt="logo" width={131} height={34} />
+        <Image
+          src="/brand-lg.png"
+          priority={true}
+          alt="logo"
+          width={100}
+          height={26}
+        />
       ) : (
         <Image
           src="/brand-lg-darkmode.png"
           priority={true}
           alt="logo"
-          width={131}
-          height={34}
+          width={100}
+          height={26}
         />
       )}
     </a>
