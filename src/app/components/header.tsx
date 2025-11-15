@@ -49,6 +49,7 @@ export function Header() {
               src={"/edgar-tolete.webp"}
               alt="Edgar Tolete"
               priority={true}
+              fetchPriority="high"
               width={500}
               height={500}
               className="hidden sm:block"
@@ -57,6 +58,7 @@ export function Header() {
               src={"/edgar-tolete.webp"}
               alt="Edgar Tolete"
               priority={true}
+              fetchPriority="high"
               width={280}
               height={280}
               className="sm:hidden"
