@@ -38,7 +38,17 @@ export default function FormModal() {
 
   useEffect(() => {
     if (captchaToken) {
-      console.log("# valid captcha. trigger something", { token: captchaToken});
+      fetch("https://www.google.com/recaptcha/api/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          secret: "6LfrYkUcAAAAAK_O4-UkpzKdS_tlB5BdFaeTBMGh",
+          response: captchaToken,
+        }),
+      })
+        .then((r) => r.json())
+        .then((d) => console.log("data: ", d))
+        .catch((e) => console.error("error: ", e));
     }
   }, [captchaToken]);
 
