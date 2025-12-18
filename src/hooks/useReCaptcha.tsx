@@ -20,7 +20,7 @@ export function useReCaptcha({
   onExpiredAction,
   onErrorAction,
 }: ReCaptchaCallback = {}) {
-  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -31,17 +31,16 @@ export function useReCaptcha({
 
     (window as WindowWithCaptcha).onSubmit = (token: string) => {
       if (token) {
-        console.log(token);
-        setIsCaptchaValid(true);
+        setCaptchaToken(token);
         onSuccessAction?.();
       }
     };
     (window as WindowWithCaptcha).onExpired = () => {
-      setIsCaptchaValid(false);
+      setCaptchaToken(null);
       onExpiredAction?.();
     };
     (window as WindowWithCaptcha).onError = () => {
-      setIsCaptchaValid(false);
+      setCaptchaToken(null);
       onErrorAction?.();
     };
     return () => {
@@ -55,7 +54,7 @@ export function useReCaptcha({
       delete (window as WindowWithCaptcha).onExpired;
       delete (window as WindowWithCaptcha).onError;
     };
-  }, [setIsCaptchaValid, onSuccessAction, onExpiredAction, onErrorAction]);
+  }, [setCaptchaToken, onSuccessAction, onExpiredAction, onErrorAction]);
 
-  return { isCaptchaValid, setIsCaptchaValid };
+  return { captchaToken };
 }

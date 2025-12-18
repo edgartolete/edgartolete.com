@@ -31,16 +31,16 @@ type TFormRes = CreateEmailResponse[];
 export default function FormModal() {
   const { setOpen } = useModal();
 
-  const { isCaptchaValid } = useReCaptcha({
+  const { captchaToken } = useReCaptcha({
     onErrorAction: () => toast.error("Captcha error, please try again."),
     onExpiredAction: () => toast.error("Captcha expired, please try again."),
   });
 
   useEffect(() => {
-    if (isCaptchaValid) {
-      console.log("# valid captcha. trigger something");
+    if (captchaToken) {
+      console.log("# valid captcha. trigger something", captchaToken);
     }
-  }, [isCaptchaValid]);
+  }, [captchaToken]);
 
   const { trigger, isMutating } = useMutation<TFormRes, TFormReq>("/api/send", {
     onSuccess: ([receiver, sender]) => {
@@ -158,7 +158,7 @@ export default function FormModal() {
             <Button
               type="submit"
               className="mt-4 w-full"
-              disabled={!isCaptchaValid}
+              disabled={!captchaToken}
             >
               {isMutating ? "Loading..." : "Submit"}
             </Button>
