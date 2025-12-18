@@ -38,7 +38,7 @@ export default function FormModal() {
 
   useEffect(() => {
     if (captchaToken) {
-      console.log("# valid captcha. trigger something", captchaToken);
+      console.log("# valid captcha. trigger something", { token: captchaToken});
     }
   }, [captchaToken]);
 
