@@ -10,20 +10,17 @@ type WindowWithCaptcha = Window &
   };
 
 type ReCaptchaCallback = {
-  tokenGeneratorUrl: () => void;
   onSuccessAction?: () => void;
   onExpiredAction?: () => void;
   onErrorAction?: () => void;
 };
 
 export function useReCaptcha({
-  tokenGeneratorUrl,
   onSuccessAction,
   onExpiredAction,
   onErrorAction,
 }: ReCaptchaCallback = {}) {
   const [isCaptchaValid, setIsCaptchaValid] = useState(false);
-  const [token, setToken] = useState(null);
 
   useEffect(() => {
     const script = document.createElement("script");
