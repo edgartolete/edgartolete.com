@@ -10,17 +10,20 @@ type WindowWithCaptcha = Window &
   };
 
 type ReCaptchaCallback = {
+  tokenGeneratorUrl: () => void;
   onSuccessAction?: () => void;
   onExpiredAction?: () => void;
   onErrorAction?: () => void;
 };
 
 export function useReCaptcha({
+  tokenGeneratorUrl,
   onSuccessAction,
   onExpiredAction,
   onErrorAction,
 }: ReCaptchaCallback = {}) {
   const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+  const [token, setToken] = useState(null);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -30,8 +33,11 @@ export function useReCaptcha({
     document.head.appendChild(script);
 
     (window as WindowWithCaptcha).onSubmit = (token: string) => {
-      if (token) setIsCaptchaValid(true);
-      onSuccessAction?.();
+      if (token) {
+        console.log("# token: ", { token });
+        setIsCaptchaValid(true);
+        onSuccessAction?.();
+      }
     };
     (window as WindowWithCaptcha).onExpired = () => {
       setIsCaptchaValid(false);
