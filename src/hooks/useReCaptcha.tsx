@@ -31,7 +31,7 @@ export function useReCaptcha({
 
     (window as WindowWithCaptcha).onSubmit = (token: string) => {
       if (token) {
-        console.log("# token: ", { token });
+        console.log(token);
         setIsCaptchaValid(true);
         onSuccessAction?.();
       }
