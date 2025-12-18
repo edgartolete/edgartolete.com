@@ -14,7 +14,8 @@ import { CreateEmailResponse } from "resend";
 import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ContactSchema } from "@/schema/contact";
-import { useEffect, useState } from "react";
+import { useReCaptcha } from "@/hooks/useReCaptcha";
+import { useEffect } from "react";
 
 type TFormData = {
   firstName: string;
@@ -27,16 +28,19 @@ type TFormReq = TFormData;
 
 type TFormRes = CreateEmailResponse[];
 
-type WindowWithCaptcha = Window &
-  typeof globalThis & {
-    onSubmit?: (token: string) => void;
-    onExpired?: () => void;
-    onError?: () => void;
-  };
-
 export default function FormModal() {
   const { setOpen } = useModal();
-  const [captchaValid, setCaptchaValid] = useState(false);
+
+  const { isCaptchaValid } = useReCaptcha({
+    onErrorAction: () => toast.error("Captcha error, please try again."),
+    onExpiredAction: () => toast.error("Captcha expired, please try again."),
+  });
+
+  useEffect(() => {
+    if (isCaptchaValid) {
+      console.log("# valid captcha. trigger something");
+    }
+  }, [isCaptchaValid]);
 
   const { trigger, isMutating } = useMutation<TFormRes, TFormReq>("/api/send", {
     onSuccess: ([receiver, sender]) => {
@@ -75,37 +79,6 @@ export default function FormModal() {
   const onSubmit: SubmitHandler<TFormData> = async (data) => {
     trigger(data);
   };
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://www.google.com/recaptcha/api.js";
-    script.async = true;
-    script.defer = true;
-    document.head.appendChild(script);
-
-    (window as WindowWithCaptcha).onSubmit = (token: string) => {
-      if (token) setCaptchaValid(true);
-    };
-    (window as WindowWithCaptcha).onExpired = () => {
-      setCaptchaValid(false);
-      toast.error("Captcha expired, please try again.");
-    };
-    (window as WindowWithCaptcha).onError = () => {
-      setCaptchaValid(false);
-      toast.error("Captcha error, please try again.");
-    };
-    return () => {
-      const script = document.querySelector(
-        `script[src="https://www.google.com/recaptcha/api.js"]`,
-      );
-      if (script) {
-        script.remove();
-      }
-      delete (window as WindowWithCaptcha).onSubmit;
-      delete (window as WindowWithCaptcha).onExpired;
-      delete (window as WindowWithCaptcha).onError;
-    };
-  }, [setCaptchaValid]);
 
   return (
     <>
@@ -185,7 +158,7 @@ export default function FormModal() {
             <Button
               type="submit"
               className="mt-4 w-full"
-              disabled={!captchaValid}
+              disabled={!isCaptchaValid}
             >
               {isMutating ? "Loading..." : "Submit"}
             </Button>
