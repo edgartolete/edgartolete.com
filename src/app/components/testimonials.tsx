@@ -131,6 +131,7 @@ export function Testimonials() {
         </div>
       </div>
       <button
+        aria-label="Previous Testimonial"
         className="absolute cursor-pointer top-1/4 left-2 xl:-left-10 bg-black rounded-lg p-0  border-2 border-gray-400"
         onClick={() => emblaApi?.scrollPrev()}
       >
@@ -150,6 +151,7 @@ export function Testimonials() {
         </svg>
       </button>
       <button
+      aria-label="Next Testimonial"
         className="absolute cursor-pointer top-1/4 right-2 xl:-right-10 bg-black rounded-lg p-0  border-2 border-gray-400"
         onClick={() => emblaApi?.scrollNext()}
       >
