@@ -167,7 +167,7 @@ export default function FormModal() {
             ></div>
             <Button
               type="submit"
-              className="mt-4 w-full"
+              className="mt-4 w-full bg-white text-black"
               disabled={!captchaToken}
             >
               {isMutating ? "Loading..." : "Submit"}
