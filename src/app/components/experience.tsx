@@ -3,35 +3,133 @@ import { Container } from "@/components/container";
 export function Experience() {
   return (
     <Container className="py-20" id="experience">
-      <h2 className="font-bold text-center text-3xl">Experience</h2>
-      <p className="mt-6">
-        I, Edgar Tolete is a web developer with years of experience, and &nbsp;
-        years of experience using React/NextJS framework. I graduated with a
-        Bachelor&apos;s degree in Information Technology in 2013.
-      </p>
+      <h2 className="font-bold text-center text-3xl mb-12">
+        Relevant Career History
+      </h2>
 
-      <p className="mt-6">
-        I am a passionate and dedicated web developer with strong experience in
-        building and optimizing user interfaces. I have continuously enhanced my
-        skills in testing, debugging, and improving web functionality to deliver
-        high-quality digital experiences.
-      </p>
+      <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+        <li>
+          <div className="timeline-middle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+          <div className="timeline-start mb-10 md:text-end">
+            <time className="font-mono italic">May 2024 - July 2025</time>
+            <div className="text-lg font-black">VtimeTech Consulting</div>
+            Led multiple projects by setting priorities, mentoring junior
+            developers, and reporting progress directly to investors. Actively
+            contributed to frontend development using React.js and Next.js,
+            implementing new application features and resolving bugs. Delivered
+            translation and localization support along with other website
+            enhancements to improve usability and market reach.
+          </div>
+          <hr className="bg-gray-600" />
+        </li>
+        <li>
+          <hr />
+          <div className="timeline-middle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+          <div className="timeline-end mb-10">
+            <time className="font-mono italic">February 2023 - April 2024</time>
+            <div className="text-lg font-black">Volenday Groups</div>
+            Led client stand-up meetings and progress reporting in a Business
+            Analyst role, creating and managing Jira tickets while leading two
+            concurrent projects. Actively contributed to team brainstorming
+            sessions to resolve issues and define new features. On the
+            development side, contributed to building and enhancing multiple
+            applications—including a Catalog Admin Dashboard, Data Publication
+            App, and B2B Catalog App—using React.js, Next.js, and Flutter, and
+            led the migration of a website from Ant Design to Material UI.
+            Collaborated on implementing a proof of concept integrating OpenAI’s
+            GPT and assisted in debugging backend API issues using Express.js
+            (Node.js).
+          </div>
+          <hr className="bg-gray-600" />
+        </li>
 
-      <p className="mt-6">
-        Hard-working by nature and an enthusiastic team player, I take pride in
-        my commitment to every task I take on. I am always eager to learn and
-        grow—both technically and interpersonally—while staying up to date with
-        the latest trends and best practices in website design and development.
-      </p>
+        <li>
+          <hr />
+          <div className="timeline-middle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+          <div className="timeline-start mb-10 md:text-end">
+            <time className="font-mono italic">
+              October 2021 - January 2023
+            </time>
+            <div className="text-lg font-black">Freelance</div>
+            Took on freelance side projects through Upwork, working with clients
+            on small to mid-sized tasks such as website updates, feature
+            enhancements, bug fixes, and general technical support. Delivered
+            solutions based on client requirements while managing timelines,
+            communication, and revisions independently.
+          </div>
+          <hr className="bg-gray-600" />
+        </li>
 
-      <p className="mt-6">
-        I thrive in collaborative environments, actively contributing ideas in
-        brainstorming sessions and working closely with teams and clients to
-        bring creative solutions to life. I’m confident in managing projects,
-        perform well under pressure, and consistently meet deadlines. I value
-        constructive feedback as a tool for growth and always maintain a high
-        level of professionalism in everything I do.
-      </p>
+        <li>
+          <hr />
+          <div className="timeline-middle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+          <div className="timeline-end mb-10">
+            <time className="font-mono italic">
+              September 2020 - September 2021
+            </time>
+            <div className="text-lg font-black">Infinity Web Solutions</div>
+            Leveraged WordPress and Shopify to design and build e-commerce
+            websites, customizing themes and templates to align with clients’
+            branding and business requirements. Extended platform functionality
+            through the integration and configuration of third-party plugins and
+            packages to enhance performance, usability, and overall user
+            experience.
+          </div>
+          <hr className="bg-gray-600" />
+        </li>
+      </ul>
     </Container>
   );
 }

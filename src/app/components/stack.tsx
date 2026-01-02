@@ -1,6 +1,5 @@
 import { Container } from "@/components/container";
 import {
-    AwsLight,
   Docker,
   Flutter,
   NextjsIcon,
@@ -14,7 +13,7 @@ import {
 export function Stack() {
   return (
     <Container className="py-10" id="stack">
-      <h2 className="font-bold text-center text-3xl mb-12">Tech Stack</h2>
+      <h2 className="font-bold text-center text-3xl mb-12">Primary Tech Stack</h2>
       <TechStack />
     </Container>
   );

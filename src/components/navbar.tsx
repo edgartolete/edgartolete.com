@@ -25,7 +25,7 @@ export function NavbarMenu() {
       link: "/#stack",
     },
     {
-      name: "Experience",
+      name: "Career History",
       link: "/#experience",
     },
     {

@@ -10,7 +10,7 @@ import { ReactNode } from "react";
 export function Skills() {
   return (
     <Container className="py-20" id="skills">
-      <h2 className="font-bold text-center text-3xl mb-6">Skills</h2>
+      <h2 className="font-bold text-center text-3xl mb-6">Skills Overview</h2>
       <Accordion type="multiple">
         <AccordionItem value="leadership">
           <AccordionTrigger>
