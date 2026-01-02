@@ -16,25 +16,21 @@ import { useModal } from "./ui/animated-modal";
 
 export function NavbarMenu() {
   const navItems = [
-    // {
-    //   name: "Projects",
-    //   link: "/#projects",
-    // },
-    // {
-    //   name: "Timeline",
-    //   link: "/#about",
-    // },
-    // {
-    //   name: "Certifications",
-    //   link: "/#certifications",
-    // },
-    // {
-    //   name: "Blogs",
-    //   link: "/blogs",
-    // },
     {
-      name: "About",
+      name: "Skills",
+      link: "/#skills",
+    },
+    {
+      name: "Tech Stack",
+      link: "/#stack",
+    },
+    {
+      name: "About Me",
       link: "/#about",
+    },
+    {
+      name: "Experience",
+      link: "/#experience",
     },
     {
       name: "Testimonials",
