@@ -25,12 +25,12 @@ export function NavbarMenu() {
       link: "/#stack",
     },
     {
-      name: "About Me",
-      link: "/#about",
-    },
-    {
       name: "Experience",
       link: "/#experience",
+    },
+    {
+      name: "About Me",
+      link: "/#about",
     },
     {
       name: "Testimonials",

@@ -1,37 +1,120 @@
 import { Container } from "@/components/container";
+import {
+    AwsLight,
+  Docker,
+  Flutter,
+  NextjsIcon,
+  Nodejs,
+  Postgresql,
+  React,
+  Tailwindcss,
+  Typescript,
+} from "./svgs";
 
 export function Stack() {
   return (
-    <Container className="py-20" id="stack">
-      <h2 className="font-bold text-center text-3xl">Tech Stack</h2>
-      <p className="mt-6">
-        I, Edgar Tolete is a web developer with years of experience, and &nbsp;
-        years of experience using React/NextJS framework. I graduated with a
-        Bachelor&apos;s degree in Information Technology in 2013.
-      </p>
-
-      <p className="mt-6">
-        I am a passionate and dedicated web developer with strong experience in
-        building and optimizing user interfaces. I have continuously enhanced my
-        skills in testing, debugging, and improving web functionality to deliver
-        high-quality digital experiences.
-      </p>
-
-      <p className="mt-6">
-        Hard-working by nature and an enthusiastic team player, I take pride in
-        my commitment to every task I take on. I am always eager to learn and
-        grow—both technically and interpersonally—while staying up to date with
-        the latest trends and best practices in website design and development.
-      </p>
-
-      <p className="mt-6">
-        I thrive in collaborative environments, actively contributing ideas in
-        brainstorming sessions and working closely with teams and clients to
-        bring creative solutions to life. I’m confident in managing projects,
-        perform well under pressure, and consistently meet deadlines. I value
-        constructive feedback as a tool for growth and always maintain a high
-        level of professionalism in everything I do.
-      </p>
+    <Container className="py-10" id="stack">
+      <h2 className="font-bold text-center text-3xl mb-12">Tech Stack</h2>
+      <TechStack />
     </Container>
+  );
+}
+
+function TechStack() {
+  const size = 40;
+  const stackList = [
+    {
+      name: "Typescript",
+      icon: <Typescript width={size} height={size} />,
+      sub: "Programming Language",
+    },
+    {
+      name: "TailwindCSS",
+      icon: <Tailwindcss width={size} height={size} />,
+      sub: "CSS Utility Framework",
+    },
+    {
+      name: "React",
+      icon: <React width={size} height={size} />,
+      sub: "Frontend Library",
+    },
+
+    // {
+    //   name: "Vue",
+    // },
+
+    {
+      name: "NextJS",
+      icon: <NextjsIcon width={size} height={size} />,
+      sub: "Frontend framework",
+    },
+
+    // {
+    //   name: "Nuxt",
+    // },
+    //
+    {
+      name: "NodeJS",
+      icon: <Nodejs width={size} height={size} />,
+      sub: "JavaScript Runtime",
+    },
+
+    {
+      name: "PostgreSQL",
+      icon: <Postgresql width={size} height={size} />,
+      sub: "SQL Database",
+    },
+
+    {
+      name: "Docker",
+      icon: <Docker width={size} height={size} />,
+      sub: "Container Application",
+    },
+
+    {
+      name: "Flutter",
+      icon: <Flutter width={size} height={size} />,
+      sub: "Mobile UI Framework",
+    },
+    // {
+    //   name: "AWS",
+    //   icon: <AwsLight width={size} height={size} />,
+    //   sub: "Cloud Platform",
+    // },
+    // {
+    //   name: "Echo",
+    // },
+    //
+    // {
+    //   name: "Axum",
+    // },
+  ];
+
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 m-auto">
+        {stackList.map((s) => (
+          <StackCard key={s.name} {...s} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+type StackT = {
+  name: string;
+  icon: React.ReactNode;
+  sub: string;
+};
+
+function StackCard({ icon, name, sub }: StackT) {
+  return (
+    <div className="flex gap-2 p-2 border border-gray-500 rounded">
+      <div> {icon}</div>
+      <div>
+        <div>{name}</div>
+        <div className="text-xs text-gray-500">{sub}</div>
+      </div>
+    </div>
   );
 }

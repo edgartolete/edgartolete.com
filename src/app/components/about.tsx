@@ -18,7 +18,7 @@ const reactYrsExp = differenceInYears(new Date(), initialReactExp);
 export function About() {
   return (
     <Container className="py-20" id="about">
-      <h2 className="font-bold text-center text-3xl"> About Me</h2>
+      <h2 className="font-bold text-center text-3xl mb-12"> About Me</h2>
       <p className="mt-6">
         I, Edgar Tolete is a web developer with {frontendYrsExp}+ years of
         experience, and &nbsp; {reactYrsExp}+ years of experience using
@@ -48,26 +48,6 @@ export function About() {
         constructive feedback as a tool for growth and always maintain a high
         level of professionalism in everything I do.
       </p>
-      <TechStack />
     </Container>
-  );
-}
-
-function TechStack() {
-  const size = 40;
-  return (
-    <div className="flex flex-col gap-2 pt-20">
-      <h2 className="text-2xl font-bold text-center">Tech Stack</h2>
-      <div className="grid grid-cols-4 sm:grid-cols-8 gap-6 sm:w-xl m-auto">
-        <Typescript width={size} height={size} />
-        <Tailwindcss width={size} height={size} />
-        <React width={size} height={size} />
-        <NextjsIcon width={size} height={size} />
-        <Nodejs width={size} height={size} />
-        <Golang width={size} height={size} />
-        <Flutter width={size} height={size} />
-        <Docker width={size} height={size} />
-      </div>
-    </div>
   );
 }
