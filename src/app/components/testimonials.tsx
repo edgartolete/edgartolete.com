@@ -13,12 +13,12 @@ type TTestimonial = {
 };
 
 export function Testimonials() {
-  const [emblaRef] = useEmblaCarousel(
+  const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       startIndex: 0,
       loop: true,
     },
-    [Autoplay({ delay: 5000, stopOnInteraction: false })],
+    [Autoplay({ delay: 10_000, stopOnInteraction: true })],
   );
 
   const testimonials: TTestimonial[] = [
@@ -121,7 +121,7 @@ export function Testimonials() {
   ];
 
   return (
-    <Container className="py-20" id="testimonials">
+    <Container className="py-20 relative" id="testimonials">
       <h2 className="text-3xl font-bold text-center">Testimonials</h2>
       <div ref={emblaRef} className="overflow-hidden mt-8">
         <div className="flex">
@@ -130,6 +130,44 @@ export function Testimonials() {
           })}
         </div>
       </div>
+      <button
+        className="absolute cursor-pointer top-1/4 left-2 xl:-left-10 bg-black rounded-lg p-0  border-2 border-gray-400"
+        onClick={() => emblaApi?.scrollPrev()}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          className="lucide lucide-chevron-left-icon lucide-chevron-left"
+        >
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+      </button>
+      <button
+        className="absolute cursor-pointer top-1/4 right-2 xl:-right-10 bg-black rounded-lg p-0  border-2 border-gray-400"
+        onClick={() => emblaApi?.scrollNext()}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          className="lucide lucide-chevron-right-icon lucide-chevron-right"
+        >
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      </button>
     </Container>
   );
 }
