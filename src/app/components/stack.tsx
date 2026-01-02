@@ -12,7 +12,7 @@ import {
 
 export function Stack() {
   return (
-    <Container className="py-10" id="stack">
+    <Container className="py-20" id="stack">
       <h2 className="font-bold text-center text-3xl mb-12">Primary Tech Stack</h2>
       <TechStack />
     </Container>
