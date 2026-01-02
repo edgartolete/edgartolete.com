@@ -25,7 +25,10 @@ export function Experience() {
           </div>
           <div className="timeline-start mb-10 md:text-end">
             <time className="font-mono italic">May 2024 - July 2025</time>
-            <div className="text-lg font-black">VtimeTech Consulting</div>
+            <div className="text-lg font-black mb-1">
+              VtimeTech Consulting{" "}
+              <span className="font-normal"> — Team Lead</span>
+            </div>
             Led multiple projects by setting priorities, mentoring junior
             developers, and reporting progress directly to investors. Actively
             contributed to frontend development using React.js and Next.js,
@@ -53,7 +56,10 @@ export function Experience() {
           </div>
           <div className="timeline-end mb-10">
             <time className="font-mono italic">February 2023 - April 2024</time>
-            <div className="text-lg font-black">Volenday Groups</div>
+            <div className="text-lg font-black mb-1">
+              Volenday Groups{" "}
+              <span className="font-normal"> — Junior Software Engineer</span>
+            </div>
             Led client stand-up meetings and progress reporting in a Business
             Analyst role, creating and managing Jira tickets while leading two
             concurrent projects. Actively contributed to team brainstorming
@@ -89,7 +95,12 @@ export function Experience() {
             <time className="font-mono italic">
               October 2021 - January 2023
             </time>
-            <div className="text-lg font-black">Freelance</div>
+            <div className="text-lg font-black mb-1">
+              Freelance{" "}
+              <span className="font-normal">
+                — Web Developer / Virtual Assistant
+              </span>
+            </div>
             Took on freelance side projects through Upwork, working with clients
             on small to mid-sized tasks such as website updates, feature
             enhancements, bug fixes, and general technical support. Delivered
@@ -119,7 +130,12 @@ export function Experience() {
             <time className="font-mono italic">
               September 2020 - September 2021
             </time>
-            <div className="text-lg font-black">Infinity Web Solutions</div>
+            <div className="text-lg font-black mb-1">
+              Infinity Web Solutions{" "}
+              <span className="font-normal">
+                — Web Developer
+              </span>
+            </div>
             Leveraged WordPress and Shopify to design and build e-commerce
             websites, customizing themes and templates to align with clients’
             branding and business requirements. Extended platform functionality
