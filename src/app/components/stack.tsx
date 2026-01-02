@@ -1,7 +1,9 @@
 import { Container } from "@/components/container";
 import {
+  AwsLight,
   Docker,
   Flutter,
+  Golang,
   NextjsIcon,
   Nodejs,
   Postgresql,
@@ -13,7 +15,9 @@ import {
 export function Stack() {
   return (
     <Container className="py-20" id="stack">
-      <h2 className="font-bold text-center text-3xl mb-12">Primary Tech Stack</h2>
+      <h2 className="font-bold text-center text-3xl mb-12">
+        Primary Tech Stack
+      </h2>
       <TechStack />
     </Container>
   );
@@ -40,6 +44,8 @@ function TechStack() {
 
     // {
     //   name: "Vue",
+    //   icon: <Vuejs width={size} height={size} />,
+    //   sub: "Frontend Framework",
     // },
 
     {
@@ -47,15 +53,25 @@ function TechStack() {
       icon: <NextjsIcon width={size} height={size} />,
       sub: "Frontend framework",
     },
+    {
+      name: "Flutter",
+      icon: <Flutter width={size} height={size} />,
+      sub: "Mobile UI Framework",
+    },
 
     // {
     //   name: "Nuxt",
     // },
-    //
+
     {
       name: "NodeJS",
       icon: <Nodejs width={size} height={size} />,
       sub: "JavaScript Runtime",
+    },
+    {
+      name: "Golang",
+      icon: <Golang width={size} height={size} />,
+      sub: "Programming Language",
     },
 
     {
@@ -71,27 +87,18 @@ function TechStack() {
     },
 
     {
-      name: "Flutter",
-      icon: <Flutter width={size} height={size} />,
-      sub: "Mobile UI Framework",
+      name: "AWS",
+      icon: <AwsLight width={size} height={size} />,
+      sub: "Cloud Platform",
     },
     // {
-    //   name: "AWS",
-    //   icon: <AwsLight width={size} height={size} />,
-    //   sub: "Cloud Platform",
-    // },
-    // {
-    //   name: "Echo",
-    // },
-    //
-    // {
-    //   name: "Axum",
+    //   name: "Rust",
     // },
   ];
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 m-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 m-auto">
         {stackList.map((s) => (
           <StackCard key={s.name} {...s} />
         ))}
