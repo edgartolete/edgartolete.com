@@ -13,7 +13,7 @@ export function Header() {
           <div className="flex-1/2 flex flex-col justify-center after:content-[''] relative after:absolute after:bottom-10 after:right-0 md:after:bottom-50 md:after:-left-40 after:w-[200px] after:h-[200px] after:blur-[120px]  after:[background:linear-gradient(260deg,green_100%,rgba(115,67,210,0)100%)] ">
             <span className="text-2xl font-bold">Hi! I am Edgar.</span>
             <h1 className="text-4xl sm:text-5xl font-bold mt-6 bg-linear-to-r to-[#72ab3a] from-lime-900 dark:from-lime-100 bg-clip-text text-transparent">
-              Fullstack Web
+              Frontend Web
               <br /> Developer
             </h1>
             <p className="mt-6">

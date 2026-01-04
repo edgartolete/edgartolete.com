@@ -20,16 +20,20 @@ export function NavbarMenu() {
       name: "Skills",
       link: "/#skills",
     },
+    // {
+    //   name: "Projects",
+    //   link: "/#projects",
+    // },
     {
-      name: "Tech Stack",
+      name: "Stack",
       link: "/#stack",
     },
     {
-      name: "Career History",
+      name: "Career",
       link: "/#experience",
     },
     {
-      name: "About Me",
+      name: "About",
       link: "/#about",
     },
     {
