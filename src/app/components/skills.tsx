@@ -9,7 +9,7 @@ import { ReactNode } from "react";
 
 export function Skills() {
   return (
-    <Container className="py-20" id="skills">
+    <Container className="pt-20 pb-12" id="skills">
       <h2 className="font-bold text-center text-3xl mb-6">Skills Overview</h2>
       <Accordion type="multiple">
         <AccordionItem value="leadership">

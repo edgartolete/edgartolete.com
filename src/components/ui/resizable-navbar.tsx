@@ -244,26 +244,37 @@ export const NavbarLogo = () => {
 
   return (
     <a
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
+      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-lg font-extrabold text-white"
       href="#"
     >
-      {!isDark ? (
+      <Image
+        src="/vercel.svg"
+        priority={true}
+        alt="logo"
+        width={20}
+        height={20}
+        className="mr-1"
+      />
+      TOLETE
+      {/*!isDark ? (
         <Image
-          src="/brand-lg.png"
+          // src="/brand-lg.png"
           priority={true}
           alt="logo"
           width={100}
           height={26}
+          className="bg-white"
         />
       ) : (
         <Image
-          src="/brand-lg-darkmode.png"
+          // src="/brand-lg-darkmode.png"
           priority={true}
           alt="logo"
           width={100}
           height={26}
+          className="bg-black"
         />
-      )}
+      ) */}
     </a>
   );
 };

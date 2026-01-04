@@ -14,7 +14,7 @@ import {
 
 export function Stack() {
   return (
-    <Container className="py-20" id="stack">
+    <Container className="pt-20 pb-12" id="stack">
       <h2 className="font-bold text-center text-3xl mb-12">Tech Stack</h2>
       <TechStack />
     </Container>
