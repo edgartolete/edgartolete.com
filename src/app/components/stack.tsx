@@ -83,7 +83,7 @@ function TechStack() {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="grid w-full sm:w-fit grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 m-auto">
+      <div className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-4 m-auto">
         {stackList.map((s) => (
           <StackCard key={s.name} {...s} />
         ))}
