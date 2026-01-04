@@ -13,16 +13,17 @@ export async function reCaptchaVerify(
 ): Promise<ReCaptchaResT> {
   const URL = `https://www.google.com/recaptcha/api/siteverify`;
 
-  const params = new URLSearchParams();
-  params.append("secret", secretKey);
-  params.append("response", token);
+   const body = new URLSearchParams({
+    secret: secretKey,
+    response: token,
+  });
 
-  const res = await fetch(URL, {
+    const res = await fetch(URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: params.toString(),
+    body: body,
   });
   return await res.json();
 }
