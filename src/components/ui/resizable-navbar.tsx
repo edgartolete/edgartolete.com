@@ -244,7 +244,7 @@ export const NavbarLogo = () => {
 
   return (
     <a
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-lg font-extrabold text-white"
+      className={`relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-lg font-extrabold ${ isDark ? "text-white": "text-black"}`}
       href="#"
     >
       <Image

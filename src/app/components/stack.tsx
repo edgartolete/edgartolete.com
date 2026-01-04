@@ -100,7 +100,7 @@ type StackT = {
 
 function StackCard({ icon, name, sub }: StackT) {
   return (
-    <div className="flex gap-2 p-2 border border-gray-500 rounded">
+    <div className="flex gap-2 p-2 border border-white/20 rounded">
       <div> {icon}</div>
       <div>
         <div>{name}</div>

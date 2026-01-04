@@ -36,7 +36,7 @@ export function Experience() {
             translation and localization support along with other website
             enhancements to improve usability and market reach.
           </div>
-          <hr className="bg-gray-600" />
+          <hr className="bg-white/10" />
         </li>
         <li>
           <hr />
@@ -72,7 +72,7 @@ export function Experience() {
             GPT and assisted in debugging backend API issues using Express.js
             (Node.js).
           </div>
-          <hr className="bg-gray-600" />
+          <hr className="bg-white/10" />
         </li>
 
         <li>
@@ -107,7 +107,7 @@ export function Experience() {
             solutions based on client requirements while managing timelines,
             communication, and revisions independently.
           </div>
-          <hr className="bg-gray-600" />
+          <hr className="bg-white/10" />
         </li>
 
         <li>
@@ -143,7 +143,7 @@ export function Experience() {
             packages to enhance performance, usability, and overall user
             experience.
           </div>
-          <hr className="bg-gray-600" />
+          <hr className="bg-white/10" />
         </li>
       </ul>
     </Container>
