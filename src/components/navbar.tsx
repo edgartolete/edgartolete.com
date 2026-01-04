@@ -40,6 +40,10 @@ export function NavbarMenu() {
       name: "Testimonials",
       link: "/#testimonials",
     },
+    {
+      name: "Buzz",
+      link: "/#buzz",
+    },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
