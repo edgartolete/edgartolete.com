@@ -32,8 +32,6 @@ export async function POST(req: Request) {
     return Response.json({
       captchaResp,
       captchaErr,
-      token: data?.captchaToken,
-      secret: process.env.GOOGLE_RECAPTCHA_SECRET,
     });
   }
 
