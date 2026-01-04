@@ -1,6 +1,5 @@
 import { Container } from "@/components/container";
 import {
-  AwsLight,
   Docker,
   Flutter,
   Golang,
@@ -8,6 +7,7 @@ import {
   Nodejs,
   Postgresql,
   React,
+  Sqlite,
   Tailwindcss,
   Typescript,
 } from "./svgs";
@@ -15,9 +15,7 @@ import {
 export function Stack() {
   return (
     <Container className="py-20" id="stack">
-      <h2 className="font-bold text-center text-3xl mb-12">
-        Primary Tech Stack
-      </h2>
+      <h2 className="font-bold text-center text-3xl mb-12">Tech Stack</h2>
       <TechStack />
     </Container>
   );
@@ -42,12 +40,6 @@ function TechStack() {
       sub: "Frontend Library",
     },
 
-    // {
-    //   name: "Vue",
-    //   icon: <Vuejs width={size} height={size} />,
-    //   sub: "Frontend Framework",
-    // },
-
     {
       name: "NextJS",
       icon: <NextjsIcon width={size} height={size} />,
@@ -58,10 +50,6 @@ function TechStack() {
       icon: <Flutter width={size} height={size} />,
       sub: "Mobile UI Framework",
     },
-
-    // {
-    //   name: "Nuxt",
-    // },
 
     {
       name: "NodeJS",
@@ -81,19 +69,16 @@ function TechStack() {
     },
 
     {
+      name: "SQLite",
+      icon: <Sqlite width={size} height={size} />,
+      sub: "SQL Database",
+    },
+
+    {
       name: "Docker",
       icon: <Docker width={size} height={size} />,
       sub: "Container Application",
     },
-
-    {
-      name: "AWS",
-      icon: <AwsLight width={size} height={size} />,
-      sub: "Cloud Platform",
-    },
-    // {
-    //   name: "Rust",
-    // },
   ];
 
   return (

@@ -20,10 +20,10 @@ export function NavbarMenu() {
       name: "Skills",
       link: "/#skills",
     },
-    // {
-    //   name: "Projects",
-    //   link: "/#projects",
-    // },
+    {
+      name: "Projects",
+      link: "/#projects",
+    },
     {
       name: "Stack",
       link: "/#stack",
