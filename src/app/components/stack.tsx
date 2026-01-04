@@ -1,8 +1,8 @@
 import { Container } from "@/components/container";
 import {
   Docker,
-  Flutter,
-  Golang,
+  // // Flutter,
+  // Golang,
   NextjsIcon,
   Nodejs,
   Postgresql,
@@ -45,22 +45,22 @@ function TechStack() {
       icon: <NextjsIcon width={size} height={size} />,
       sub: "Frontend framework",
     },
-    {
-      name: "Flutter",
-      icon: <Flutter width={size} height={size} />,
-      sub: "Mobile UI Framework",
-    },
+    // {
+    //   name: "Flutter",
+    //   icon: <Flutter width={size} height={size} />,
+    //   sub: "Mobile UI Framework",
+    // },
 
     {
       name: "NodeJS",
       icon: <Nodejs width={size} height={size} />,
       sub: "JavaScript Runtime",
     },
-    {
-      name: "Golang",
-      icon: <Golang width={size} height={size} />,
-      sub: "Programming Language",
-    },
+    // {
+    //   name: "Golang",
+    //   icon: <Golang width={size} height={size} />,
+    //   sub: "Programming Language",
+    // },
 
     {
       name: "PostgreSQL",
@@ -83,7 +83,7 @@ function TechStack() {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-4 m-auto">
+      <div className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-2 sm:gap-4 m-auto">
         {stackList.map((s) => (
           <StackCard key={s.name} {...s} />
         ))}
