@@ -24,13 +24,17 @@ export async function POST(req: Request) {
     return Response.json([error, error]);
   }
 
-  const [captchaResp, captchaErr] = await tryCatch(reCaptchaVerify(
-    process.env.GOOGLE_RECAPTCHA_SECRET!,
-    data?.captchaToken,
-  ));
+  const [captchaResp, captchaErr] = await tryCatch(
+    reCaptchaVerify(process.env.GOOGLE_RECAPTCHA_SECRET!, data?.captchaToken),
+  );
 
   if (captchaErr || !captchaResp?.success) {
-    return Response.json({ captchaResp, captchaErr });
+    return Response.json({
+      captchaResp,
+      captchaErr,
+      token: data?.captchaToken,
+      secret: process.env.GOOGLE_RECAPTCHA_SECRET,
+    });
   }
 
   const { email: senderEmail, firstName, lastName, message } = data;
