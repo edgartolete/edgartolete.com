@@ -20,10 +20,10 @@ export function NavbarMenu() {
       name: "Skills",
       link: "/#skills",
     },
-    {
-      name: "Projects",
-      link: "/#projects",
-    },
+    // {
+    //   name: "Projects",
+    //   link: "/#projects",
+    // },
     {
       name: "Stack",
       link: "/#stack",
@@ -40,10 +40,10 @@ export function NavbarMenu() {
       name: "Testimonials",
       link: "/#testimonials",
     },
-    {
-      name: "Buzz",
-      link: "/#buzz",
-    },
+    // {
+    //   name: "Buzz",
+    //   link: "/#buzz",
+    // },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

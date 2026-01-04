@@ -1,3 +1,5 @@
+import { reCaptchaVerify } from "@/lib/captcha";
+import { tryCatch } from "@/lib/try-catch.util";
 import { CreateEmailOptions, Resend } from "resend";
 
 export type ResendPayload = {
@@ -20,6 +22,15 @@ export async function POST(req: Request) {
   if (!allowedOrigins.includes(origin)) {
     const error = { error: "Cross origin not allow" };
     return Response.json([error, error]);
+  }
+
+  const [captchaResp, captchaErr] = await tryCatch(reCaptchaVerify(
+    process.env.GOOGLE_RECAPTCHA_SECRET!,
+    data?.captchaToken,
+  ));
+
+  if (captchaErr || !captchaResp?.success) {
+    return Response.json({ captchaResp, captchaErr });
   }
 
   const { email: senderEmail, firstName, lastName, message } = data;

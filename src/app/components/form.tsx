@@ -15,13 +15,13 @@ import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ContactSchema } from "@/schema/contact";
 import { useReCaptcha } from "@/hooks/useReCaptcha";
-import { useEffect } from "react";
 
 type TFormData = {
   firstName: string;
   lastName: string;
   email: string;
   message: string;
+  captchaToken?: string | null;
 };
 
 type TFormReq = TFormData;
@@ -35,22 +35,6 @@ export default function FormModal() {
     onErrorAction: () => toast.error("Captcha error, please try again."),
     onExpiredAction: () => toast.error("Captcha expired, please try again."),
   });
-
-  useEffect(() => {
-    if (captchaToken) {
-      fetch("https://www.google.com/recaptcha/api/siteverify", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          secret: "6LfrYkUcAAAAAK_O4-UkpzKdS_tlB5BdFaeTBMGh",
-          response: captchaToken,
-        }),
-      })
-        .then((r) => r.json())
-        .then((d) => console.log("data: ", d))
-        .catch((e) => console.error("error: ", e));
-    }
-  }, [captchaToken]);
 
   const { trigger, isMutating } = useMutation<TFormRes, TFormReq>("/api/send", {
     onSuccess: ([receiver, sender]) => {
@@ -82,6 +66,7 @@ export default function FormModal() {
       lastName: "",
       email: "",
       message: "",
+      captchaToken,
     },
     resolver: zodResolver(ContactSchema),
   });

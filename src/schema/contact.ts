@@ -24,6 +24,7 @@ const ContactSchema = z.object({
     })
     .min(10, { message: "Message must be at least 10 characters long" })
     .max(500, { message: "Message should be maximum 500 characters" }),
+  captchaToken: z.string().optional().nullable()
 });
 
 export { ContactSchema };
