@@ -255,5 +255,9 @@ export function Skills() {
 }
 
 function AccordionTitle({ children }: { children: ReactNode }) {
-  return <h3 className="font-bold text-lg">{children}</h3>;
+  return (
+    <h3 className="font-bold text-lg">
+      {children}
+    </h3>
+  );
 }
