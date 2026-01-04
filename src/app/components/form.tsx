@@ -66,13 +66,12 @@ export default function FormModal() {
       lastName: "",
       email: "",
       message: "",
-      captchaToken,
     },
     resolver: zodResolver(ContactSchema),
   });
 
   const onSubmit: SubmitHandler<TFormData> = async (data) => {
-    trigger(data);
+    trigger({ ...data, captchaToken });
   };
 
   return (
